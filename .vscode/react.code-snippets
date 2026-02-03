@@ -1,0 +1,42 @@
+{
+  "React Functional Component (rfc)": {
+    "prefix": "rfc",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": [
+      "export default function ${1:ComponentName}() {",
+      "  return (",
+      "    <div>${2}</div>",
+      "  );",
+      "}"
+    ],
+    "description": "React functional component"
+  },
+  "React Arrow Function Export Default (rafce)": {
+    "prefix": "rafce",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": [
+      "const ${1:ComponentName} = () => {",
+      "  return (",
+      "    <div>${2}</div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React arrow function component with export default"
+  },
+  "React Function Export Default (rfce)": {
+    "prefix": "rfce",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": [
+      "function ${1:ComponentName}() {",
+      "  return (",
+      "    <div>${2}</div>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React function component with export default"
+  }
+}

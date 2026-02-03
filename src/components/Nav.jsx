@@ -1,40 +1,63 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Icons are provided globally via FontAwesome library in index.js
 import LibraryLogo from "../assets/Library.svg";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ numberOfItems }) => {
+  function openMenu() {
+    document.body.classList.add("menu--open");
+  }
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+  }
   return (
     <nav>
       <div className="nav__container">
-        <a href="/">
+        <Link to="/">
           <img src={LibraryLogo} alt="" className="logo" />
-        </a>
+        </Link>
         <ul className="nav__links">
           <li className="nav__list">
-            <a href="#" className="nav__link">
+            <Link to="/" className="nav__link">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav__list">
-            <a href="#" className="nav__link">
+            <Link to="/books" className="nav__link">
               Books
-            </a>
+            </Link>
           </li>
-          <button className="btn__menu" aria-label="Menu">
+          <button className="btn__menu" onClick={openMenu} aria-label="Menu">
             <FontAwesomeIcon icon="bars" />
           </button>
           <li className="nav__icon">
-            <a href="/cart" className="nav__link">
+            <Link to="/cart" className="nav__link">
               <FontAwesomeIcon icon="shopping-cart" />
-            </a>
-            <span className="cart__length">3</span>
+            </Link>
+            {numberOfItems > 0 && <span className="cart__length">{numberOfItems}</span>}
           </li>
         </ul>
         <div className="menu__backdrop">
-            <button className="btn__menu btn__menu--close">
-                <FontAwesomeIcon icon="times"/>
-            </button>
+          <button className="btn__menu btn__menu--close" onClick={closeMenu}>
+            <FontAwesomeIcon icon="times" />
+          </button>
+          <ul className="menu__links">
+            <li className="menu__list">
+              <Link to="/" className="menu__link">
+                Home
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link to="/books" className="menu__link">
+                Books
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link to="/cart" className="menu__link">
+                Cart
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
