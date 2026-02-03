@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// Icons are provided globally via FontAwesome library in index.js
+// Icons are provided globally via FontAwesome library in index.js!
 import LibraryLogo from "../assets/Library.svg";
 import { Link } from "react-router-dom";
 
